@@ -24,5 +24,21 @@ namespace Exercise1
         {
             InitializeComponent();
         }
+
+        private void btnEnter_Click(object sender, RoutedEventArgs e)
+        {
+            //Read Data Entered into Text Box
+            string input = tbxInput.Text;
+
+            //Display Text from Text Box in Text Block
+            tblkDisplay.Text = input;
+
+        }
+
+        private void tbxInput_GotFocus(object sender, RoutedEventArgs e)
+        {
+            tbxInput.Text = "";
+            tblkDisplay.Text = "";
+        }
     }
 }

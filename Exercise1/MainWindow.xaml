@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBox x:Name="tbxInput" HorizontalAlignment="Left" Height="23" Margin="317,57,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" GotFocus="tbxInput_GotFocus"/>
+        <Button x:Name="btnEnter" Content="Button" HorizontalAlignment="Left" Margin="317,122,0,0" VerticalAlignment="Top" Width="75" Click="btnEnter_Click"/>
+        <TextBlock x:Name="tblkDisplay" HorizontalAlignment="Left" Margin="317,189,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
