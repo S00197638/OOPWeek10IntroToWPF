@@ -24,5 +24,23 @@ namespace Exercise7
         {
             InitializeComponent();
         }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            Game game1 = new Game("ASSASSIN'S CREED: VALHALLA", 68, Genre.RPG);
+            Game game2 = new Game("OVERWATCH", 189, Genre.FPS);
+            Game game3 = new Game("FORTNITE", 25, Genre.BattleRoyale);
+
+        }
+
+        private void DisplayGames()
+        {
+            //Console.WriteLine("\n{0, -35}{1, -15}{2, -20}", "Title", "Hours Played", "Genre");
+
+            //foreach (Song song in playlist)
+            //{
+            //    Console.WriteLine(song);
+            //}
+        }
     }
 }

@@ -15,20 +15,20 @@ namespace Exercise7
 
         public Genre GameGenre { get; set; }
 
-        public double HoursPlayed { get; set; }
+        public int HoursPlayed { get; set; }
 
         #endregion
 
         #region Constructors
 
-        public Game(string title, double hoursPlayed, Genre gameGenre)
+        public Game(string title, int hoursPlayed, Genre gameGenre)
         {
             Title = title;
             HoursPlayed = hoursPlayed;
             GameGenre = gameGenre;
         }
 
-        public Game(string title, double hoursPlayed) : this(title, hoursPlayed, Genre.Other) { }
+        public Game(string title, int hoursPlayed) : this(title, hoursPlayed, Genre.Other) { }
 
         public Game() : this("Unknown", 0) { }
 

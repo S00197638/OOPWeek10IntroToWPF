@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Exercise7"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Activated="Window_Activated">
     <Grid>
         <TextBlock x:Name="tblkInitialGames" HorizontalAlignment="Left" Margin="375,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name="tblkGameLibrary" HorizontalAlignment="Left" Margin="329,20,0,0" TextWrapping="Wrap" Text="Game Library" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
