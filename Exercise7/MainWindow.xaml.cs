@@ -25,22 +25,114 @@ namespace Exercise7
             InitializeComponent();
         }
 
-        private void Window_Activated(object sender, EventArgs e)
+        private void tbxPlayerName_GotFocus(object sender, RoutedEventArgs e)
         {
-            Game game1 = new Game("ASSASSIN'S CREED: VALHALLA", 68, Genre.RPG);
-            Game game2 = new Game("OVERWATCH", 189, Genre.FPS);
-            Game game3 = new Game("FORTNITE", 25, Genre.BattleRoyale);
-
+            tbxPlayerName.Clear();
+            tbxPlayerName.Background = Brushes.White;
         }
 
-        private void DisplayGames()
+        private void btnStart_Click(object sender, RoutedEventArgs e)
         {
-            //Console.WriteLine("\n{0, -35}{1, -15}{2, -20}", "Title", "Hours Played", "Genre");
+            bool startGame = false;
+            int score = 0;
 
-            //foreach (Song song in playlist)
-            //{
-            //    Console.WriteLine(song);
-            //}
+            if (tbxPlayerName.Text == "" || tbxPlayerName.Text == "Player Name...")
+            {
+                MessageBox.Show("No Name Entered!  Please Enter your Player Name!");
+                tbxPlayerName.Text = "Player Name...";
+                tbxPlayerName.Background = Brushes.Red;
+                startGame = false;
+            }
+            else
+            {
+                tblkUser.Text = tbxPlayerName.Text;
+                tblkScore.Text = score.ToString();
+                tbxPlayerName.Background = Brushes.Green;
+                startGame = true;
+            }
+
+            if(startGame)
+            {
+                UpdatePlayerNumber();
+                UpdateRandom();
+            }
+        }
+
+        public void UpdatePlayerNumber()
+        {
+            Random rng = new Random();
+            int playerNumber = 0;
+            playerNumber = rng.Next(1, 11);
+            tblkPlayerNumber.Text = playerNumber.ToString();
+        }
+
+        public async void UpdateRandom()
+        {
+            Random rng = new Random();
+            int randomNumber;
+
+            for (int i = 0; i < 10; i++)
+            {
+                randomNumber = rng.Next(1, 11);
+
+                tblkNumberToGet.Text = randomNumber.ToString();
+
+                await Task.Delay(50);
+            }
+        }
+
+        private void btnNext_Click(object sender, RoutedEventArgs e)
+        {
+            btnNext.Background = Brushes.White;
+            UpdateRandom();
+        }
+
+        private void btnSnap_Click(object sender, RoutedEventArgs e)
+        {
+            string playerNumString = tblkPlayerNumber.Text;
+            string numString = tblkNumberToGet.Text;
+            int playerNum;
+            int number;
+            bool isNumPlayer = int.TryParse(playerNumString, out playerNum);
+            bool isNum = int.TryParse(numString, out number);
+
+            if(isNumPlayer && isNum)
+            {
+                if(playerNum == number)
+                {
+                    MessageBox.Show("SNAP!");
+                    UpdateScore();
+                    UpdatePlayerNumber();
+                    UpdateRandom();
+                }
+                else
+                {
+                    MessageBox.Show("Not The Same!  Try Again!");
+                    btnNext.Background = Brushes.Yellow;
+                }
+            }
+        }
+
+        public void UpdateScore()
+        {
+            string scoreString = tblkScore.Text;
+            int scoreNum;
+            bool isNumScore = int.TryParse(scoreString, out scoreNum);
+
+            if(isNumScore)
+            {
+                if(scoreNum == 2)
+                {
+                    scoreNum++;
+                    tblkScore.Text = scoreNum.ToString();
+                    MessageBox.Show("You Won!");
+                }
+                else
+                {
+                    scoreNum++;
+                    tblkScore.Text = scoreNum.ToString();
+                }
+            }
         }
     }
 }

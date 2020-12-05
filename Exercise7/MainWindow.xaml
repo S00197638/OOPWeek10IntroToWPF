@@ -5,14 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Exercise7"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Activated="Window_Activated">
+        Title="Snap" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBlock x:Name="tblkInitialGames" HorizontalAlignment="Left" Margin="375,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="tblkGameLibrary" HorizontalAlignment="Left" Margin="329,20,0,0" TextWrapping="Wrap" Text="Game Library" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
-        <TextBox x:Name="tbxSortBy" HorizontalAlignment="Left" Height="23" Margin="329,180,0,0" TextWrapping="Wrap" Text="Sort By..." VerticalAlignment="Top" Width="120"/>
-        <TextBlock x:Name="tblkEnterSortBy" HorizontalAlignment="Left" Margin="142,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button x:Name="btnSortBy" Content="Enter" HorizontalAlignment="Left" Margin="557,181,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBlock HorizontalAlignment="Left" Margin="341,275,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Border x:Name="bderTitle" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="127" Margin="61,10,63,0" VerticalAlignment="Top" Width="668" RenderTransformOrigin="1.512,0.06"/>
+        <Border x:Name="bderInfo" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="47" Margin="61,137,63,0" VerticalAlignment="Top" Width="668" RenderTransformOrigin="0.502,0.199"/>
+        <Border x:Name="bderGame" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="225" Margin="61,184,63,0" VerticalAlignment="Top" Width="668"/>
+        <TextBlock x:Name="tblkWelcome" HorizontalAlignment="Left" Margin="304,23,0,0" TextWrapping="Wrap" Text="Welcome To Snap" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.678,0.523"/>
+        <Button x:Name="btnStart" Content="Start Game" HorizontalAlignment="Left" Margin="351,106,0,0" VerticalAlignment="Top" Width="75" Click="btnStart_Click"/>
+        <TextBox x:Name="tbxPlayerName" HorizontalAlignment="Left" Height="23" Margin="402,70,0,0" TextWrapping="Wrap" Text="Player Name..." VerticalAlignment="Top" Width="120" FontStyle="Italic" TextDecorations="{x:Null}" GotFocus="tbxPlayerName_GotFocus"/>
+        <TextBlock x:Name="tblkEnterName" HorizontalAlignment="Left" Margin="242,69,0,0" TextWrapping="Wrap" Text="Enter Player Name" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="tblkUsername" HorizontalAlignment="Left" Margin="242,155,0,0" TextWrapping="Wrap" Text="Player :" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.441,0.565"/>
+        <TextBlock x:Name="tblkUser" HorizontalAlignment="Left" Margin="304,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblkScoreText" HorizontalAlignment="Left" Margin="433,155,0,0" TextWrapping="Wrap" Text="Score :" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock x:Name="tblkScore" HorizontalAlignment="Left" Margin="522,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblkRules" HorizontalAlignment="Left" Margin="311,197,0,0" TextWrapping="Wrap" Text="Get 3 Snaps To Win!" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <TextBlock x:Name="tblkPlayerCardText" HorizontalAlignment="Left" Margin="229,253,0,0" TextWrapping="Wrap" Text="Your Number" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock x:Name="tblkNumberToGetText" HorizontalAlignment="Left" Margin="476,253,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock x:Name="tblkPlayerNumber" HorizontalAlignment="Left" Margin="256,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock x:Name="tblkNumberToGet" HorizontalAlignment="Left" Margin="494,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"/>
+        <Button x:Name="btnSnap" Content="SNAP" HorizontalAlignment="Left" Margin="311,369,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold" FontStyle="Italic" Click="btnSnap_Click"/>
+        <Button x:Name="btnNext" Content="NEXT" HorizontalAlignment="Left" Margin="396,369,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold" FontStyle="Italic" Click="btnNext_Click"/>
+
 
     </Grid>
 </Window>
